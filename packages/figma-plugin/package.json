@@ -1,0 +1,33 @@
+{
+  "name": "exoskeleton-figma-plugin",
+  "version": "1.0.0",
+  "description": "A Figma plugin for working with Holocene",
+  "main": "code.js",
+  "type": "module",
+  "scripts": {
+    "build": "concurrently \"npm:build:*\" -c blue,magenta",
+    "build:plugin": "bun build plugin/index.ts --outdir=dist --sourcemap=inline",
+    "build:ui": "vite build",
+    "watch": "concurrently \"npm:watch:*\" -c blue,magenta",
+    "watch:plugin": "bun build --watch plugin/index.ts --outdir=dist --sourcemap=inline",
+    "watch:ui": "vite build --watch",
+    "lint": "eslint --ext .ts,.tsx --ignore-pattern node_modules .",
+    "lint:fix": "eslint --ext .ts,.tsx --ignore-pattern node_modules --fix ."
+  },
+  "author": "Steve Kinney <hello@stevekinney.net>",
+  "license": "",
+  "devDependencies": {
+    "@figma/eslint-plugin-figma-plugins": "*",
+    "@figma/plugin-typings": "*",
+    "@typescript-eslint/eslint-plugin": "^8.3.0",
+    "@typescript-eslint/parser": "^8.3.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^9.9.1",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.2",
+    "vite-plugin-singlefile": "^2.0.2"
+  },
+  "dependencies": {
+    "@types/bun": "^1.1.8"
+  }
+}

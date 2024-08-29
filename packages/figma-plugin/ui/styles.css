@@ -1,0 +1,5 @@
+html,
+body {
+  background-color: var(--figma-color-bg);
+  color: var(--figma-color-text);
+}
